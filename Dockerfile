@@ -2,7 +2,9 @@ FROM php:7.2-cli
 
 MAINTAINER Magefox <magefoxtech@gmail.com>
 
-RUN apt-get update && pecl install mcrypt-1.0.1 \
+RUN apt-get update && apt-get install -y \
+    libmcrypt-dev \
+    && pecl install mcrypt-1.0.1 \
     && docker-php-ext-enable mcrypt \
     && rm -rf /var/lib/apt/lists/*
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
