@@ -4,6 +4,9 @@ MAINTAINER Magefox <magefoxtech@gmail.com>
 
 RUN apt-get update && apt-get install -y \
     libmcrypt-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
     && docker-php-ext-install -j$(nproc) mcrypt gd \
     && docker-php-ext-enable mcrypt \
     && rm -rf /var/lib/apt/lists/*
