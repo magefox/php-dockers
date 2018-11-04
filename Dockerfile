@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libpng-dev \
     libxslt1-dev \
+    unzip \
     && docker-php-ext-install gd intl mbstring xsl zip bcmath soap \
     && pecl install mcrypt-1.0.1 \
     && docker-php-ext-enable mcrypt \

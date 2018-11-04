@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libpng-dev \
     libxslt1-dev \
+    unzip \
     && docker-php-ext-install mcrypt gd intl mbstring xsl zip bcmath soap \
     && rm -rf /var/lib/apt/lists/*
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
